@@ -1,0 +1,10 @@
+# The echo plugin as an external package: the acceptance-test fixture for the
+# gateway's installer (docs/deployment.md). Nothing here is secret.
+schema: 1
+service: echo
+plugins: [echo]
+manifests: [aab_plugin_echo/manifest.yaml]
+runtime: "0.3"
+build: {dockerfile: Dockerfile}
+volumes: {echo_data: /data}
+env_passthrough: [TZ]
